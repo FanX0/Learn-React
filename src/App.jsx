@@ -1,8 +1,4 @@
-import {
-    IconBrandFacebook,
-    IconBrandGithub,
-    IconBrandTwitter,
-} from '@tabler/icons-react';
+import { IconBrandFacebook, IconBrandGithub, IconBrandTwitter } from '@tabler/icons-react';
 import clsx from 'clsx';
 
 export default function App() {
@@ -13,8 +9,7 @@ export default function App() {
                     {...{
                         type: 'submit',
                         onClick: () => console.log('Login with another style'),
-                    }}
-                >
+                    }}>
                     <IconBrandFacebook />
                     Facebook
                 </Button>
@@ -22,19 +17,11 @@ export default function App() {
                     <IconBrandFacebook />
                     Facebook
                 </Button>
-                <Button
-                    className='bg-blue-600'
-                    onClick={() => console.log(' Twitter')}
-                    type='submit'
-                >
+                <Button className='bg-blue-600' onClick={() => console.log(' Twitter')} type='submit'>
                     <IconBrandTwitter />
                     Twitter
                 </Button>
-                <Button
-                    className='bg-black'
-                    onClick={() => console.log(' Github')}
-                    type='submit'
-                >
+                <Button className='bg-black' onClick={() => console.log(' Github')} type='submit'>
                     <IconBrandGithub />
                     Github
                 </Button>
@@ -51,8 +38,7 @@ function Button(props) {
             className={clsx(
                 className,
                 `[&>svg]:w-5 [&>svg]:h-5  [&>svg]:stroke-1 flex item-center gap-x-2  text-white px-4 py-2 rounded`
-            )}
-        >
+            )}>
             {text || children}
         </button>
     );
