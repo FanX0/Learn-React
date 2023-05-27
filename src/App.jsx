@@ -1,45 +1,36 @@
-import { IconBrandFacebook, IconBrandGithub, IconBrandTwitter } from '@tabler/icons-react';
-import clsx from 'clsx';
-
-export default function App() {
+import Card from './components/Card';
+import Button from './components/Button';
+function App() {
     return (
-        <div className='bg-blue-900 grid place-content-center min-h-screen'>
-            <div className={'flex gap-x-2'}>
-                <Button
-                    {...{
-                        type: 'submit',
-                        onClick: () => console.log('Login with another style'),
-                    }}>
-                    <IconBrandFacebook />
-                    Facebook
-                </Button>
-                <Button onClick={() => console.log(' Facebook')} type='reset'>
-                    <IconBrandFacebook />
-                    Facebook
-                </Button>
-                <Button className='bg-blue-600' onClick={() => console.log(' Twitter')} type='submit'>
-                    <IconBrandTwitter />
-                    Twitter
-                </Button>
-                <Button className='bg-black' onClick={() => console.log(' Github')} type='submit'>
-                    <IconBrandGithub />
-                    Github
-                </Button>
+        <div className='bg-slate-100 text-slate-800 tracking-tight antialiased flex items-center justify-center min-h-screen'>
+            <div className='max-w-2xl w-full flex items-center gap-4'>
+                <Card>
+                    <Card.Title>Hello React</Card.Title>
+                    <Card.Body>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea accusantium incidunt nulla, mollitia itaque
+                        possimus ad consectetur dolorem minima quaerat nesciunt natus perferendis ratione. Velit aliquid
+                        repellendus nam non corrupti?
+                    </Card.Body>
+
+                    <Card.Footer>
+                        <Button className='bg-red-600'>Click Me</Button>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Title>Hello React</Card.Title>
+                    <Card.Body>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea accusantium incidunt nulla, mollitia itaque
+                        possimus ad consectetur dolorem minima quaerat nesciunt natus perferendis ratione. Velit aliquid
+                        repellendus nam non corrupti?
+                    </Card.Body>
+
+                    <Card.Footer>
+                        <Button className='bg-red-600'>Click Me</Button>
+                    </Card.Footer>
+                </Card>
             </div>
         </div>
     );
 }
 
-function Button(props) {
-    const { className = 'bg-red-600', children, text, type = 'submit' } = props;
-    return (
-        <button
-            {...props}
-            className={clsx(
-                className,
-                `[&>svg]:w-5 [&>svg]:h-5  [&>svg]:stroke-1 flex item-center gap-x-2  text-white px-4 py-2 rounded`
-            )}>
-            {text || children}
-        </button>
-    );
-}
+export default App;
